@@ -45,4 +45,4 @@ This project is a customized evolution of the **Persona 3 UI** web experience.
 | Contributor | Contribution | Profile |
 | :--- | :--- | :--- |
 | **blairxu13** | Original Template & UI Base | [@blairxu13](https://github.com/blairxu13) |
-| **Hussain** | Design Overhaul & Feature Logic | [Your Profile Link Here] |
+| **Hussain** | Design Overhaul & Feature Logic | [@MdHu55a1n](https://github.com/MdHu55a1n) |
