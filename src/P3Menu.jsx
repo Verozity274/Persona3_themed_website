@@ -49,10 +49,8 @@ export default function P3Menu({ onNavigate }) {
           inset: 0;
           z-index: 10;
           display: flex;
-          align-items: flex-end;
-          justify-content: flex-start;
-          padding-left: 12vw;
-          padding-bottom: 20vh;
+          align-items: center;
+          justify-content: center;
           pointer-events: none;
         }
 
@@ -65,7 +63,7 @@ export default function P3Menu({ onNavigate }) {
           padding: 48px;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           pointer-events: all;
         }
 

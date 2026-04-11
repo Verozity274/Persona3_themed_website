@@ -4,7 +4,7 @@ import { profile } from "./portfolioData";
 import char1 from "./assets/char1.png";
 import char2 from "./assets/char2.png";
 import char3 from "./assets/char3.png";
-import bgVideo from "./assets/main1.mp4";
+import bgVideo from "./assets/main3.mp4";
 import newsign from "./assets/newsign.png";
 import icon1 from "./assets/icon1.png";
 import icon2 from "./assets/icon2.png";
@@ -14,8 +14,8 @@ const CHARS = [char1, char2, char3];
 
 const ROLES = [
   { text: "LEADER", color: "#e8c100", bg: "rgba(232,193,0,0.12)", border: "rgba(232,193,0,0.5)" },
-  { text: "PARTY",  color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
-  { text: "PARTY",  color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
+  { text: "PARTY", color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
+  { text: "PARTY", color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
 ];
 
 const ITEMS = [
@@ -49,15 +49,15 @@ const ITEMS = [
 ];
 
 export default function Socials() {
-  const [active, setActive]               = useState(0);
-  const [mounted, setMounted]             = useState(false);
+  const [active, setActive] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const [activeInfoBar, setActiveInfoBar] = useState(0);
-  const [focus, setFocus]                 = useState("left"); // "left" | "right"
+  const [focus, setFocus] = useState("left"); // "left" | "right"
   const navigate = useNavigate();
 
   useEffect(() => {
     const v = document.querySelector('video');
-    if (v) v.play().catch(() => {});
+    if (v) v.play().catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -68,13 +68,13 @@ export default function Socials() {
   useEffect(() => {
     const onKey = (e) => {
       if (focus === "left") {
-        if (e.key === "ArrowUp")    setActive(i => Math.max(0, i - 1));
-        if (e.key === "ArrowDown")  setActive(i => Math.min(ITEMS.length - 1, i + 1));
+        if (e.key === "ArrowUp") setActive(i => Math.max(0, i - 1));
+        if (e.key === "ArrowDown") setActive(i => Math.min(ITEMS.length - 1, i + 1));
         if (e.key === "ArrowRight") { setFocus("right"); setActiveInfoBar(0); }
-        if (e.key === "Enter")      window.open(ITEMS[active].href, "_blank");
+        if (e.key === "Enter") window.open(ITEMS[active].href, "_blank");
       } else {
         const barCount = ITEMS[active].bars;
-        if (e.key === "ArrowUp")   setActiveInfoBar(i => Math.max(0, i - 1));
+        if (e.key === "ArrowUp") setActiveInfoBar(i => Math.max(0, i - 1));
         if (e.key === "ArrowDown") setActiveInfoBar(i => Math.min(barCount - 1, i + 1));
         if (e.key === "ArrowLeft") setFocus("left");
         if (e.key === "Enter") {
@@ -522,9 +522,9 @@ export default function Socials() {
           <div className="sc-info-bar">
             <span style={{ fontSize: '24px', marginLeft: '14px', marginRight: '8px' }}>{detail.icon}</span>
             <span className="sc-info-bar-text" style={{ flex: '0 0 80px' }}>{detail.label}</span>
-            <span className="sc-info-bar-count" style={{ 
-              flex: 1, 
-              textAlign: 'right', 
+            <span className="sc-info-bar-count" style={{
+              flex: 1,
+              textAlign: 'right',
               marginRight: '20px',
               fontSize: detail.value.length > 18 ? '26px' : '34px'
             }}>

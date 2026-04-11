@@ -1,10 +1,11 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import menuVideo from './assets/main1.mp4'
+import menuVideo from './assets/Mainn.mp4'
+import menuLoopVideo from './assets/Mainn_1.mp4'
 import main1 from './assets/main1.mp4'
-import main2 from './assets/main1.mp4'
-import main3 from './assets/main1.mp4'
+import main2 from './assets/main2.mp4'
+import main3 from './assets/main3.mp4'
 import P3Menu from './P3Menu'
 import VideoPage from './VideoPage'
 import ResumePage from './ResumePage'
@@ -12,6 +13,43 @@ import PageTransition from './PageTransition'
 import Socials from './Socials'
 import AboutMe from './AboutMe'
 import './App.css'
+
+function BackgroundVideo({ intro, loop, ...props }) {
+  const [showLoop, setShowLoop] = useState(false);
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, zIndex: -1, background: '#000' }}>
+      <video
+        {...props}
+        src={intro}
+        autoPlay
+        muted
+        playsInline
+        style={{ 
+          position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+          zIndex: showLoop ? 1 : 2,
+          opacity: showLoop ? 0 : 1,
+          transition: 'opacity 0.4s ease-in-out'
+        }}
+        onEnded={() => setShowLoop(true)}
+      />
+      <video
+        {...props}
+        src={loop}
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{ 
+          position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+          zIndex: showLoop ? 2 : 1,
+          opacity: showLoop ? 1 : 0,
+          transition: 'opacity 0.4s ease-in-out'
+        }}
+      />
+    </div>
+  );
+}
 
 function MenuScreen() {
   const navigate = useNavigate()
@@ -24,7 +62,7 @@ function MenuScreen() {
 
   return (
     <div id="menu-screen">
-      <video src={menuVideo} autoPlay loop muted playsInline />
+      <BackgroundVideo intro={menuVideo} loop={menuLoopVideo} />
       <P3Menu onNavigate={(page) => {
         if (page === 'github') {
           window.open('https://github.com/MdHu55a1n', '_blank', 'noopener,noreferrer')
@@ -121,7 +159,7 @@ function SideProjectsPage() {
 
   return (
     <div id="menu-screen">
-      <video src={menuVideo} autoPlay loop muted playsInline />
+      <BackgroundVideo intro={menuVideo} loop={menuLoopVideo} />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,700;1,700&family=Montserrat:wght@300&display=swap');
         
@@ -459,8 +497,8 @@ function SideProjectsPage() {
                   <div className="p3-shadow-tri-clone" style={{ height: '40px' }} />
                   <div className="p3-highlight-clone" style={{ height: '40px' }} />
                   <div className="p3-label-wrap-clone">
-                    <span className="p3-label-base-clone p3-label-dark-clone" style={{ fontSize: 42, color: '#fff' }}>VIEW ALL →</span>
-                    <span className="p3-label-base-clone p3-label-bright-clone" style={{ fontSize: 42 }}>VIEW ALL →</span>
+                    <span className="p3-label-base-clone p3-label-dark-clone" style={{ fontSize: 42, color: '#3ce2ff' }}>VIEW ALL →</span>
+                    <span className="p3-label-base-clone p3-label-bright-clone" style={{ fontSize: 42, color: '#ff2a2a' }}>VIEW ALL →</span>
                   </div>
                 </div>
               </a>
