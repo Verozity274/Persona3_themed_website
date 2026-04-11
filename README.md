@@ -31,9 +31,9 @@ This project is a customized evolution of the **Persona 3 UI** web experience.
 * **Original Framework:** Special thanks to [blairxu13](https://github.com/blairxu13) for the [persona3-website](https://github.com/blairxu13/persona3-website) repository which served as the architectural foundation.
 * **Refinement & Customization:** Heavily modified by **Hussain** to align with a "Cyber-Laboratory" aesthetic, including:
     * Re-engineering the persona logic from "Jade" to **Hussain**.
-    * Shifting navigation alignment to the **lower-left** for improved UI flow.
+    * Updating Resume page.
+    * Replacing Twitch and Tiktok with Linkdin and Instagram.
     * Implementing a **Bento-grid** layout and glassmorphism styling.
-    * Removing "hover-to-scroll" features in favor of standard interaction.
 * **Technologies:** Built using **Next.js**, **FastAPI**, **Tailwind CSS**, and **Framer Motion**.
 
 > [!NOTE]  
